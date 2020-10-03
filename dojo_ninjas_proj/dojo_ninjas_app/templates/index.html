@@ -50,9 +50,10 @@
     <hr>
     <h1>All the Dojos</h1>
     {%for dojo in dojos%}
-        <ul>Ninjas at the {{dojo.name}} Dojo
+        <h3>Ninjas at the {{dojo.name}} Dojo</h3>
+        <ul>
             {%for ninja in dojo.ninjas.all%}
-                <li>{{ninja.first_name}} {{ninja.lastname}}</li>
+                <li>{{ninja.fullname}}</li>
             {%endfor%}
         </ul>
     

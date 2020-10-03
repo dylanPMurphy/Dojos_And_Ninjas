@@ -15,3 +15,7 @@ class Ninja(models.Model):
     my_dojo = models.ForeignKey(Dojo, related_name="ninjas", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    @property
+    def fullname(self):
+        return ("%s %s" % (self.first_name, self.last_name))
