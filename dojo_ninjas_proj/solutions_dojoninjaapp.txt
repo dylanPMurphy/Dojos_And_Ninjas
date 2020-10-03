@@ -1,0 +1,30 @@
+d1  = Dojo.objects.create(name="Half Moon Bay", city="HMB", state="CA")
+d2  = Dojo.objects.create(name="San Francisco", city="SF", state="CA")
+d3  = Dojo.objects.create(name="Stanford", city="Palo Alto", state="CA")
+
+d1.delete()
+d2.delete()
+d3.delete()
+
+d1  = Dojo.objects.create(name="Silicon Valley", city="Mountain View", state="CA")
+d2  = Dojo.objects.create(name="SOHO", city="New York City", state="NY")
+d3  = Dojo.objects.create(name="Williamsburg", city="Brooklyn", state="NY")
+
+n1 = Ninja.objects.create(first_name="Dylan", last_name="Murphy", my_dojo = d1)
+n2 = Ninja.objects.create(first_name="Jo", last_name="Murphy", my_dojo = d1)
+n3 = Ninja.objects.create(first_name="Hellen", last_name="Murphy", my_dojo = d1)
+
+n4 = Ninja.objects.create(first_name="Dylan", last_name="Sansone", my_dojo = d2)
+n5 = Ninja.objects.create(first_name="Jo", last_name="Sansone", my_dojo = d2)
+n6 = Ninja.objects.create(first_name="Hellen", last_name="Sansone", my_dojo = d2)
+
+n1 = Ninja.objects.create(first_name="Dylan", last_name="DeMolfetto", my_dojo = d3)
+n2 = Ninja.objects.create(first_name="Jo", last_name="DeMolfetto", my_dojo = d3)
+n3 = Ninja.objects.create(first_name="Hellen", last_name="DeMolfetto", my_dojo = d3)
+
+Ninja.objects.filter(my_dojo=d1)
+Ninja.objects.filter(my_dojo=d3)
+
+Ninja.objects.last().my_dojo
+
+d4 = Dojo.objects.create(name="SOHO", city="New York City", state="NY", desc="new ill shit")

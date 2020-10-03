@@ -1,0 +1,7 @@
+#forms form{
+    display: inline-block;
+    vertical-align: top;
+}
+form button{
+    display: block;
+}
